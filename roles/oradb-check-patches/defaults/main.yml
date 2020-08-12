@@ -1,0 +1,17 @@
+---
+  oracle_user: oracle                        # User that will own the Oracle Installations.
+  oracle_group: oinstall                     # Primary group for oracle_user.
+
+  oracle_stage: /opt/oracle/downloads
+  #oracle_stage_remote: "{{ oracle_stage }}"
+  #oracle_stage_install: "{% if not oracle_sw_copy and not oracle_sw_unpack%}{{ oracle_stage_remote }}{% else %}{{ oracle_stage }}{% endif %}"
+  oracle_base: /opt/oracle
+  oracle_home_db:  /opt/oracle/product/19.0.0/dbhome_1
+  #oracle_rsp_stage: "{{ oracle_stage }}/rsp"
+  #oracle_patch_stage: "{{ oracle_stage }}/patches"
+  #oracle_patch_stage_remote: "{{ oracle_stage_remote }}/patches"
+  #oracle_patch_install: "{% if not oracle_sw_copy and not oracle_sw_unpack%}{{ oracle_patch_stage_remote }}{% else %}{{ oracle_patch_stage }}{% endif %}"
+  oracle_inventory_loc: /opt/oraInventory
+  #ocm_response_file: "{{ oracle_patch_stage }}/{{ db_version }}/ocm.rsp"
+
+  apply_patches_db: False

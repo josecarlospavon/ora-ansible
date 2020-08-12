@@ -1,0 +1,5 @@
+- name: Check Oracle Patches
+  hosts: "db-int-servers"
+  become: yes 
+  roles:
+    - oradb-check-patches

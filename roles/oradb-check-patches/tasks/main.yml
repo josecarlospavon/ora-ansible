@@ -1,0 +1,15 @@
+---
+
+- name: db-opatch | Check patches
+  shell: "{{ oracle_home_db }}/OPatch/opatch lspatches"
+  become_user: "{{ oracle_user }}"
+  register: dbhome_patches
+
+- name: db-opatch | Check patches
+  debug: 
+    msg: dbhome_patches.stdout_lines
+
+- name: db-opatch | Check patches
+  shell: "echo Patch Already Applied!!!!"
+  become_user: "{{ oracle_user }}"
+  when: dbhome_patches.stdout == "31281355"
